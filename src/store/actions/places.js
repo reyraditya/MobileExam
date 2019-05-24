@@ -17,7 +17,7 @@ export const deletePlace = (key) => {
 export const createData = (items) => {
     var arrData = []
     var rawData = items.val()
-
+    if(rawData){
         Object.keys(rawData).forEach(id => {
             arrData.push({
                 key: id,
@@ -29,6 +29,7 @@ export const createData = (items) => {
                 }
             })
         })
+    }
 
     return {
         type: CREATE_DATA,
